@@ -1,0 +1,22 @@
+<?php
+function countCharacter($text, $charToCount) {
+    // Convert both to lowercase for case-insensitive comparison
+    $text = strtolower($text);
+    $charToCount = strtolower($charToCount);
+
+    $count = 0;
+    for ($i = 0; $i < strlen($text); $i++) {
+        if ($text[$i] === $charToCount) {
+            $count++;
+        }
+    }
+    return $count;
+}
+
+// Example usage
+$textInput = "shri vile parle kelvani mandal";
+$charInput = "l";
+
+$result = countCharacter($textInput, $charInput);
+echo "The character '$charInput' appears $result times in the text.";
+?>
