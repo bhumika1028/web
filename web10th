@@ -1,0 +1,13 @@
+<?php
+// Define the number for which we want to calculate the factorial
+$num = 3;  // You can change this value to calculate the factorial of a different number
+$factorial = 1;  // Initialize factorial variable to 1
+
+// Loop from the number down to 1 and multiply each value to get the factorial
+for ($x = $num; $x >= 1; $x--) {
+    $factorial = $factorial * $x;
+}
+
+// Output the result
+echo "The factorial of $num is $factorial";
+?>
