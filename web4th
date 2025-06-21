@@ -1,0 +1,18 @@
+<?php
+
+$arr = [
+    array("Roll no" => 51, "Name" => "Rasika", "Class" => 10, "Section" => "A", "Marks" => 85, "Status" => "Pass"),
+    array("Roll no" => 52, "Name" => "Sneha", "Class" => 10, "Section" => "B", "Marks" => 90, "Status" => "Pass"),
+    array("Roll no" => 53, "Name" => "Rahul", "Class" => 10, "Section" => "C", "Marks" => 78, "Status" => "Pass")
+];
+
+for ($i = 0; $i < count($arr); $i++) {
+    echo "Roll no: " . $arr[$i]["Roll no"] . "<br>";  // Adding <br> after each field
+    echo "Name: " . $arr[$i]["Name"] . "<br>";
+    echo "Class: " . $arr[$i]["Class"] . "<br>";
+    echo "Section: " . $arr[$i]["Section"] . "<br>";
+    echo "Marks: " . $arr[$i]["Marks"] . "<br>";
+    echo "Status: " . $arr[$i]["Status"] . "<br><br>";  // Double <br> to separate each student's info
+}
+
+?>
