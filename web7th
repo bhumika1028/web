@@ -1,0 +1,24 @@
+<?php
+function isPalindrome($string) {
+    // Remove spaces and convert to lowercase for a case-insensitive check
+    $processedString = strtolower(str_replace(' ', '', $string));
+
+    // Reverse the string
+    $reversedString = strrev($processedString);
+
+    // Check if original and reversed are the same
+    if ($processedString === $reversedString) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Example usage:
+$input = "Madam";
+if (isPalindrome($input)) {
+    echo "\"$input\" is a palindrome.";
+} else {
+    echo "\"$input\" is not a palindrome.";
+}
+?>
