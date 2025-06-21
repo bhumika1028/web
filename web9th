@@ -1,0 +1,18 @@
+<?php
+$rows = 5; // Height of the triangle
+
+for ($i = 1; $i <= $rows; $i++) {
+    // Print leading spaces (optional: use &nbsp; for HTML spacing)
+    for ($j = 1; $j <= $rows - $i; $j++) {
+        echo "&nbsp;";
+    }
+
+    // Print stars
+    for ($k = 1; $k <= (2 * $i - 1); $k++) {
+        echo "*";
+    }
+
+    // Line break for HTML
+    echo "<br>";
+}
+?>
