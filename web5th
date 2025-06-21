@@ -1,0 +1,67 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "bhumika";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+} else {
+    echo "Connection successful<br>";
+}
+
+// Create table
+$sql = "
+CREATE TABLE IF NOT EXISTS student1 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    marks INT NOT NULL,
+    subject VARCHAR(30) NOT NULL
+)";
+$result1 = mysqli_query($conn, $sql);
+if ($result1) {
+    echo "Table created successfully<br>";
+} else {
+    echo "Table not created: " . mysqli_error($conn) . "<br>";
+}
+
+// Insert data
+$sql = "INSERT INTO student1(name, marks, subject) VALUES ('Bhumika','51','All Clear')";
+$result2 = mysqli_query($conn, $sql);
+if ($result2) {
+    echo "Data inserted successfully.<br>";
+    
+} else {
+    echo "Error inserting data: " . mysqli_error($conn) . "<br>";
+}
+
+// Display data
+$sql = "SELECT * FROM stu";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    echo "<h2>Student Records</h2>";
+    echo "<table border='1' cellpadding='10'>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Marks</th>
+        <th>Subject</th>
+    </tr>";
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr>
+        <td>" . $row["id"] . "</td>
+        <td>" . $row["name"] . "</td>
+        <td>" . $row["marks"] . "</td>
+        <td>" . $row["subject"] . "</td>
+        </tr>";
+    }
+    echo "</table>";
+} else {
+    echo "No records found.";
+}
+?>
